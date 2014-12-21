@@ -69,12 +69,14 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "smtp.mandrillapp.com",
-    port: 587,
-    domain: Rails.application.secrets.domain_name,
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: Rails.application.secrets.email_provider_username,
-    password: Rails.application.secrets.email_provider_apikey
+    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    domain: Rails.shopxsite,
+    authentication: "login",
+
+    user_name: Rails.pauly.harrison01@gmail.com,
+    password: Rails.FiOL0ScL1JN6vcUiHxbtXQ
+
   }
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }

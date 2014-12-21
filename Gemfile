@@ -20,10 +20,18 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
 end
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+end
+
+
+
 group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+
+
+  gem 'libv8', '3.16.14.3'
+  gem 'rails_12factor', group: :production
 end
